@@ -4,6 +4,8 @@ Congratulations! You have acquired the free version of our Bootstrap based LimeS
 
 ***************************************************
 
+![] (preview.png)
+
 # Introduction
 We have tested the template and it works on version 2.05 of Limesurvey. We have not tested it on earlier versions, so it may probably not work on older versions.
 
