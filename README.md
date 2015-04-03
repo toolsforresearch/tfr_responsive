@@ -1,7 +1,5 @@
 ***************************************************
-
-Congratulations! You have acquired the free version of our Bootstrap based LimeSurvey template. 
-
+You are looking at the free version of our Bootstrap based LimeSurvey template. 
 ***************************************************
 
 ![] (preview.png)
