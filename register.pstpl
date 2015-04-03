@@ -1,0 +1,26 @@
+{CHECKJAVASCRIPT}
+
+<div class="jumbotron register-dialog">
+
+    <div class="row">
+        <div class="col-md-9">
+            <h1>{SURVEYNAME}</h1>
+        </div>
+        <div class="col-md-3">
+            <img class="logo center-block" src="/upload/surveys/{SID}/files/logo.png" alt="Logo Image" />
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 languageswitcher">
+            {LANGUAGECHANGER}
+        </div>
+    </div>
+
+
+	<p class="text-danger">{REGISTERERROR}</p>
+	<p>{REGISTERMESSAGE1}</p>
+	<p>{REGISTERMESSAGE2}</p>
+	
+	<div class="register-form">{REGISTERFORM}</div>
+</div>

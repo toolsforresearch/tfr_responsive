@@ -1,0 +1,20 @@
+{CHECKJAVASCRIPT}
+
+<div class="welcome well">
+	<div class="row">
+		<div class="col-md-5 col-md-push-7">
+
+			<img class="logo center-block" src="/upload/templates/tfr-responsive/images/tfr.png" alt="Tools for Research" />
+
+		</div>
+		<div class="col-md-7 col-md-pull-5">
+			<h1>{SURVEYNAME}</h1>
+			<p class="text-muted surveydescription">{SURVEYDESCRIPTION}</p>
+			<p class="welcome-text">{WELCOME}</p>
+			<p class="text-muted x-questions">{THEREAREXQUESTIONS}</p>
+		</div>
+		<div class="col-md-12 languageswitcher">
+            {LANGUAGECHANGER}
+        </div>
+	</div>
+</div>

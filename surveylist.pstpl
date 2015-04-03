@@ -1,0 +1,8 @@
+<div class="well survey-list-table">
+	<h1 class="site-name">{SITENAME}</h1>
+	<p>{SURVEYLISTHEADING}</p>
+	<p>
+		<ul>{SURVEYLIST}</ul>
+	</p>
+	<p class="text-muted survey-contact">{SURVEYCONTACT}</p>
+</div>

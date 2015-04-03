@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--
+
+	ToolsForResearch Responsive for LimeSurvey
+	A Responsive LimeSurvey Template Based On Bootstrap 3
+	(c) 2015 Tools for Research (http://www.toolsforresearch.com/limesurvey-responsive-template)
+
+-->
+
+<title>{SURVEYNAME} {GROUPNAME}</title>
+<meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+
+<link rel="stylesheet" href="{TEMPLATEURL}css/vendor/jquery/jquery-ui-custom.css" />
+<link rel="stylesheet" href="{TEMPLATEURL}css/vendor/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="{TEMPLATEURL}css/template.css" />
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="{TEMPLATEURL}css/template_ie8.css" />
+<![endif]-->
+
+<script type="text/javascript" src="{TEMPLATEURL}js/template.js"></script>
+
+<link rel="shortcut icon" href="{TEMPLATEURL}images/favicon.ico"/>
+{GOOGLE_ANALYTICS_JAVASCRIPT}
+</head>
+
+<body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT}">
+
+<div class="main-wrapper">
+    <div class="main" role="main">
+        {CHECKJAVASCRIPT}
+        <div class="container bflsMainContent">
+            <div class="row">
+                <div class="col-md-12 content">
