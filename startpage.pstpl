@@ -24,7 +24,7 @@
 
 <script type="text/javascript" src="{TEMPLATEURL}js/template.js"></script>
 
-<link rel="shortcut icon" href="{TEMPLATEURL}images/favicon.ico"/>
+<link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico"/>
 {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
 
@@ -33,6 +33,6 @@
 <div class="main-wrapper">
     <div class="main" role="main">
         {CHECKJAVASCRIPT}
-        <div class="container bflsMainContent">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 content">
