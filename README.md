@@ -43,9 +43,9 @@ This template was defined by Tools for Research and designed by PeterEmil van de
 
 # Who are we?
 Tools for Research is a serious LimeSurvey user. We focus on research projects in organisations like:
-FNV (Dutch workers unions)
-TNO (Contract research)
-Value2Share (Consulting)
-Antonius Ziekenhuis (Hospital)
+* FNV (Dutch workers unions) http://www.gewoongoedwerkmeter.nl
+* TNO (Contract research) 
+* Value2Share (Consulting)
+* Antonius Ziekenhuis (Hospital)
 
 We are based in The Netherlands, we work for clients in The Netherlands and the USA. But never hesitate to contact us, wherever you are in the universe. We will expand!
