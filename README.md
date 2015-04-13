@@ -17,6 +17,7 @@ This free template is licenced under GPL 2.0. This means you can do with it what
 
 # Known Issues
 * The exclusive option in multiple choice questions does not work yet, we are working on it
+* when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround: either upload the template using FTP to /upload/template or edit the file /application/config/config-defaults.php at the place where allowedtemplateuploads are declared. Add to the list the following extensions: map, eot, json, svg, ttf, woff
 
 
 # Premium features
