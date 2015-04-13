@@ -19,15 +19,14 @@ This free template is licenced under GPL 2.0. This means you can do with it what
 * The exclusive option in multiple choice questions does not work yet, we are working on it
 * when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround: either upload the template using FTP to /upload/template or edit the file /application/config/config-defaults.php at the place where allowedtemplateuploads are declared. Add to the list the following extensions: map, eot, json, svg, ttf, woff
 
-
 # Premium features
-Sometimes you may encounter things that seem to be an issue, but that have been solved in the Premium version. We want the Premium version to be secuctive enough for you to acquire it!
-* The question index is styled better in the Premium version
-* Slider questions (multiple numerical, slider layout) indicate whether they have been moved or not in the Premium version
-* You can place a logo/image per survey in upload/surveys/[SID] (remember to replace [SID] with the SID of your survey on the server) so each survey can have it's own branding in the Premium version
+Sometimes you may encounter aspects that seem to be failing: please check first if they have been solved in the Premium version.
+* All tables are fully responsive and thus a joy to view and work with on small devices
+* The question index is styled responsively
+* Slider questions (multiple numerical, slider layout) indicate whether they have been moved or not 
+* You can place a logo/image per survey in upload/surveys/[SID] (remember to replace [SID] with the SID of your survey on the server) so each survey can have it's own branding
 * The Premium version has more color, but not too much. We think that adds to the feeling of comfort of the respondent.
-* The Premium version will be developed in several colors, while the Free version will only be available in 1 color.
-
+* The Premium version will be developed in several colors, while the Free version will only be available in 1 color: grey with signal colors.
 
 # New releases
 Since we hope to distribute improved versions periodically, we hope that you send us your improvements, so we can incorporate them in newer version. We cannot guarantee that we will incorporate all suggestions, but we will certainly look at them. Please visit our website for news on the template and to download the newest version and to send us your bug reports and suggestions for improvement.
