@@ -21,10 +21,18 @@ $(document).ready(function($){
 
     // Add class checked to selected label
     if ($(element).is(':checked')) {
-      $(element).prev().toggleClass("checked");
+      $(element).prev().toggleClass('checked');
     }
   });
 
+  // Show our progressbar instead of the default one
+  if ($('#progress-wrapper').length > 0) {
+    $('.tfr-progress').append('<div id="tfr-progressbar"><div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>');
+    $('#progress-wrapper').addClass('hidden');
+  } else {
+    $('.tfr-progress').remove();
+  }  
+  
   // Set custom progressbar value
   $("#progressbar").on("progressbarcreate", function(event, ui){
 
@@ -49,14 +57,15 @@ $(document).ready(function($){
 
     if (!isColumn) {
       // Remove checked class from all labels in row
-      containingRow.find('label').removeClass("checked");
+      containingRow.find('label').removeClass('checked');
     } else {
       var name=selectedInput.attr('name');
-      $('input[name="' + name + '"]').prev().removeClass("checked");
+      $('input[name="' + name + '"]').prev().removeClass('checked');
     }
 
     // Add class checked to selected label
-    selectedInput.prev().toggleClass("checked");
+    selectedInput.prev().toggleClass('checked');
+
   });
 
 
@@ -72,14 +81,14 @@ $(document).ready(function($){
 
     if (!isColumn) {
       // Remove checked class from all labels in row
-      containingRow.find('label').removeClass("checked");
+      containingRow.find('label').removeClass('checked');
     } else {
       var name=selectedInput.attr('name');
-      $('input[name="' + name + '"]').prev().removeClass("checked");
+      $('input[name="' + name + '"]').prev().removeClass('checked');
     }
 
     // Add class checked to selected label
-    selectedInput.prev().toggleClass("checked");
+    selectedInput.prev().toggleClass('checked');
   }
 
 
@@ -97,6 +106,9 @@ $(document).ready(function($){
   });
 
 
+
+  //* !Logo in footer */
+  // @see endpage.pstpl. Use ie http://dopiaza.org/tools/datauri/index.php to generate data-uri
   $('div.main > div.container').append(' \
   <div class="row"> \
       <div class="survey-info"> \
@@ -110,7 +122,31 @@ $(document).ready(function($){
 
 
 
-  // The index
+
+
+  //* !The index */
   $('#index').addClass('index').children().removeClass('container').addClass('index-body');
+
+ 
+  
+  
+  //* !Better DOM structure on Other & Commenting Options */ 
+  // Change the DOM on the checkbox questions with an "Other" choice (same as on the radio questions)
+  $('li.checkbox-item.other-item').each(function(){
+    $(this).append('<label class="otheritem" for="othertext"></label>');
+    $(this).children('input.text').detach().appendTo($(this).children('label.otheritem'));
+  });
+  // Change the DOM on the checkbox questions with an commenting-option so they look & act the same
+  $('li.checkbox-text-item span.comment').each(function(){
+    $(this).append('<label class="answer-comment-wrapper" for="comment"></label>');
+    $(this).children('input.text').detach().appendTo($(this).children('label.answer-comment-wrapper'));
+  });
+  
+    
+  // Change the DOM on the ui-slider-callout
+  // Detach the callout from its parent so we can use it multiple times if we want to
+  //$('.ui-slider-handle').each(function() {
+  //  $(this).children().detach().appendTo($(this).parent()); // as sibling
+  //});
 
 });
