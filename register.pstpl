@@ -1,13 +1,14 @@
 {CHECKJAVASCRIPT}
 
 <div class="jumbotron register-dialog">
-
     <div class="row">
         <div class="col-md-9">
             <h1>{SURVEYNAME}</h1>
         </div>
         <div class="col-md-3">
-            <img class="logo center-block" src="/upload/surveys/{SID}/files/logo.png" alt="Logo Image" />
+
+			<img class="logo center-block" src="/upload/templates/tfr_responsive/images/tfr.png" alt="Tools for Research" />
+
         </div>
     </div>
     
@@ -17,10 +18,11 @@
         </div>
     </div>
 
-
-	<p class="text-danger">{REGISTERERROR}</p>
-	<p>{REGISTERMESSAGE1}</p>
-	<p>{REGISTERMESSAGE2}</p>
+    <div class="row register-text">
+	   <p class="text-danger">{REGISTERERROR}</p>
+	   <p>{REGISTERMESSAGE1}</p>
+	   <p>{REGISTERMESSAGE2}</p>
+	</div>
 	
-	<div class="register-form">{REGISTERFORM}</div>
+	<div class="row register-form">{REGISTERFORM}</div>
 </div>

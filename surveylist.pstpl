@@ -1,4 +1,4 @@
-<div class="well survey-list-table">
+<div class="jumbotron survey-list-table">
 	<h1 class="site-name">{SITENAME}</h1>
 	<p>{SURVEYLISTHEADING}</p>
 	<p>

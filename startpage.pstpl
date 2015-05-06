@@ -4,6 +4,8 @@
 	ToolsForResearch Responsive for LimeSurvey
 	A Responsive LimeSurvey Template Based On Bootstrap 3
 	(c) 2015 Tools for Research (http://www.toolsforresearch.com/limesurvey-responsive-template)
+   
+    Inspired by: https://github.com/mofog/BootstrapForLimeSurvey
 
 -->
 
@@ -24,15 +26,15 @@
 
 <script type="text/javascript" src="{TEMPLATEURL}js/template.js"></script>
 
-<link rel="shortcut icon" href="{TEMPLATEURL}images/favicon.ico"/>
+<link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico"/>
 {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
 
 <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT}">
 
-<div class="main-wrapper">
-    <div class="main" role="main">
-        {CHECKJAVASCRIPT}
-        <div class="container bflsMainContent">
-            <div class="row">
-                <div class="col-md-12 content">
+    <div class="main-wrapper">
+        <div class="main" role="main">
+            {CHECKJAVASCRIPT}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 content">

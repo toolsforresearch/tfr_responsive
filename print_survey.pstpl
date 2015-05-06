@@ -1,37 +1,30 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>{SURVEYNAME}</title>
-		<meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>{SITENAME} - {SURVEYNAME}</title>
+        {HEADELEMENTS}
 
+        <link rel="stylesheet" type="text/css" href="{TEMPLATEURL}print.css" media="print, screen"/>
+    </head>
+    <body>
+        <div id="limesurvey">
+            <h1>{SURVEYNAME}</h1>
 
-		<link rel="stylesheet" type="text/css"  media="print" href="{TEMPLATEURL}print.css" />
+            <div class="survey-description">{SURVEYDESCRIPTION}</div>
 
-		<script src="/scripts/admin/printablesurvey.js"></script>
+            <div class="survey-welcome">{WELCOME}</div>
 
-		<link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
-	</head>
-	<body>
-		<div id="limesurvey" class="container" style="width: 90%;">
-			<h1>{SURVEYNAME}</h1>
-	
-			<p class="text-muted survey-description">{SURVEYDESCRIPTION}</p>
-			
-			<p class="survey-welcome">{WELCOME}</p>
+            <p class="x-questions">{THEREAREXQUESTIONS}</p>
+            {GROUPS}
+            {PRIVACY}
+            <p class="submit-by">
+                {END}<br />
+                {SUBMIT_BY}<br />
+                {FAX_TO}<br />
+                {SUBMIT_TEXT}<br />
+                {THANKS}<br />
+            </p>
+        </div>
 
-			<p class="x-questions">{THEREAREXQUESTIONS}</p>
-			
-			{GROUPS}
-			
-			{PRIVACY}
-			
-			<p class="submit-by">{END}</p>
-			<p class="submit-by">{SUBMIT_BY}</p>
-			<p class="submit-by">{FAX_TO}</p>
-			<p class="submit-by">{SUBMIT_TEXT}</p>
-			<p class="submit-by">{THANKS}</p>
-		</div>
-	</body>
+    </body>
 </html>
