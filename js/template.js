@@ -51,7 +51,7 @@ $(document).ready(function($){
       containingRow=selectedInput.parent().parent(),
       isColumn=selectedInput.closest('div[id*="question"]').hasClass('array-flexible-column');
 
-    if (selectedInput.closest('div[id*="question"]').hasClass('array-flexible-duel-scale')) {
+    if (selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale')) {
       return false;
     }
 
@@ -77,7 +77,7 @@ $(document).ready(function($){
 
     var selectedInput=$(event.target),
       containingRow=selectedInput.parent().parent(),
-      isColumn=selectedInput.closest('div[id*="question"]').hasClass('array-flexible-duel-scale');
+      isColumn=selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale');
 
     if (!isColumn) {
       // Remove checked class from all labels in row
@@ -128,7 +128,13 @@ $(document).ready(function($){
   $('#index').addClass('index').children().removeClass('container').addClass('index-body');
 
  
-  
+
+
+  //* !Slider Reset Adaptive Layout */
+  if ($('.slider-reset').length > 0) {
+    $('.slider-reset').parent().addClass('withreset');
+  }
+    
   
   //* !Better DOM structure on Other & Commenting Options */ 
   // Change the DOM on the checkbox questions with an "Other" choice (same as on the radio questions)
