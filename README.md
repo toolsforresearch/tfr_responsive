@@ -17,8 +17,7 @@ This template is licenced under GPL 2.0. This means you can do with it whatever 
 When you like this template please spread the word. Small donations are more than welcome as well.
 
 # Known Issues
-* The exclusive option in multiple choice questions does not work yet, we are working on it
-* we have not yet looked into the printing possibilities of the template
+* print support is still poor (as in many templates...)
 * surveys do not work with a keyboard, at the moment it is mouse only
 * when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround:
 ** either upload the template using FTP to /upload/template or 
@@ -35,9 +34,7 @@ When you like this template please spread the word. Small donations are more tha
 # Premium features
 Sometimes you may encounter aspects that seem to be failing: please check first if they have been solved in the Premium version.
 * All tables are fully responsive and thus a joy to view and work with on small devices
-* The question index is styled responsively
 * Slider questions (multiple numerical, slider layout) indicate whether they have been moved or not
-* You can place a logo/image per survey in upload/surveys/[SID] (remember to replace [SID] with the SID of your survey on the server) so each survey can have it's own branding
 * The Premium version has more color, but not too much. We think that adds to the feeling of comfort of the respondent
 * The Premium version will be developed in several colors, while the Free version will only be available in 1 color: gray with signal colors.
 
