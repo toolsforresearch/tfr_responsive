@@ -51,8 +51,9 @@ $(document).ready(function($){
       containingRow=selectedInput.parent().parent(),
       isColumn=selectedInput.closest('div[id*="question"]').hasClass('array-flexible-column');
 
-    if (selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale')) {
-      return false;
+    if (selectedInput.closest('div[id*="question"]').hasClass('array-flexible-duel-scale')
+     || selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale')) {
+      return true;
     }
 
     if (!isColumn) {
@@ -72,23 +73,33 @@ $(document).ready(function($){
   // Radio input toggle FOR DUAL ARRAY
   $('td[class^="answer_cell_1"] > label + input').on('click', function(event){ setDualArraySelected(event); });
   $('td[class^="answer_cell_2"] > label + input').on('click', function(event){ setDualArraySelected(event); });
+  $('td[class^="dual_scale_no_answer"] > label + input').on('click', function(event){ setDualArraySelected(event); });
 
   function setDualArraySelected(event){
 
-    var selectedInput=$(event.target),
-      containingRow=selectedInput.parent().parent(),
-      isColumn=selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale');
+    var selectedInput=$(event.target);
+    var name=selectedInput.attr('name');
+    var answerInputs = $('input[name="'+name+'"]');
 
-    if (!isColumn) {
-      // Remove checked class from all labels in row
+    var containingRow=selectedInput.parent().parent();
+    var isColumn = selectedInput.closest('div[id*="question"]').hasClass('array-flexible-duel-scale')
+	             ||selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale');
+    if (isColumn && selectedInput.parent().hasClass('dual_scale_no_answer')) {
+	  // Remove checked class from all labels in row
       containingRow.find('label').removeClass('checked');
-    } else {
-      var name=selectedInput.attr('name');
-      $('input[name="' + name + '"]').prev().removeClass('checked');
+      // Adjust answerInputs for adding class=checked
+	  answerInputs = containingRow.find('input');
     }
 
-    // Add class checked to selected label
-    selectedInput.prev().toggleClass('checked');
+    answerInputs.each(function(index, element){
+      // Remove checked class from all labels in scale 
+      $(element).prev().removeClass('checked');
+	  // alert($(element).attr('id'));
+      // Add class=checked to label if checked
+      if ($(element).is(':checked')) {
+        $(element).prev().addClass('checked');
+      }
+    });
   }
 
 
