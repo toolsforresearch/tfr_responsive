@@ -17,7 +17,7 @@ This template is licenced under GPL 2.0. This means you can do with it whatever 
 When you like this template please spread the word. Small donations are more than welcome as well.
 
 # Known Issues
-* print support is still poor (as in many templates...)
+* printing is possible, but print support is still poor
 * surveys do not work with a keyboard, at the moment it is mouse only
 * when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround:
 ** either upload the template using FTP to /upload/template or 

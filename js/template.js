@@ -138,7 +138,7 @@ $(document).ready(function($){
   //* !The index */
   $('#index').addClass('index').children().removeClass('container').addClass('index-body');
 
- 
+
 
 
   //* !Slider Reset Adaptive Layout */
