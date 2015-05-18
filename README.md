@@ -19,18 +19,6 @@ When you like this template please spread the word. Small donations are more tha
 # Known Issues
 * printing is possible, but print support is still poor
 * surveys do not work with a keyboard, at the moment it is mouse only
-* when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround:
-** either upload the template using FTP to /upload/template or 
-** edit the file /application/config/config-defaults.php at the place where allowedtemplateuploads are declared. Add to the list the following extensions: map, eot, json, svg, ttf, woff
-** or run: [your survey root ]/application/config/config.php and add:  
-```
-'config'=>array(
-        'debug'=>0,
-        'debugsql'=>0,
-        'allowedtemplateuploads'=>'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff',
-    )
-```
-** or update to the most recent version of LimeSurvey, which will accept this template through the template editor.
 
 # Premium features
 Sometimes you may encounter aspects that seem to be failing: please check first if they have been solved in the Premium version.
