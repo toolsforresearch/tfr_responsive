@@ -77,28 +77,24 @@ $(document).ready(function($){
 
   function setDualArraySelected(event){
 
-    var selectedInput=$(event.target);
-    var name=selectedInput.attr('name');
-    var answerInputs = $('input[name="'+name+'"]');
+    var selectedInput = $(event.target);
+    var containingRow = selectedInput.parent().parent();
+    var answerInputs = containingRow.find('input');
+	var clickedNoAnswer = selectedInput.parent().hasClass('dual_scale_no_answer');
 
-    var containingRow=selectedInput.parent().parent();
-    var isColumn = selectedInput.closest('div[id*="question"]').hasClass('array-flexible-duel-scale')
-	             ||selectedInput.closest('div[id*="question"]').hasClass('array-flexible-dual-scale');
-    if (isColumn && selectedInput.parent().hasClass('dual_scale_no_answer')) {
-	  // Remove checked class from all labels in row
-      containingRow.find('label').removeClass('checked');
-      // Adjust answerInputs for adding class=checked
-	  answerInputs = containingRow.find('input');
-    }
+    // Remove checked class from all labels in the row
+    containingRow.find('label').removeClass('checked');
 
     answerInputs.each(function(index, element){
-      // Remove checked class from all labels in scale 
-      $(element).prev().removeClass('checked');
-	  // alert($(element).attr('id'));
-      // Add class=checked to label if checked
-      if ($(element).is(':checked')) {
+      // Add class=checked to label if input is checked,
+	  // except for the no answer label and only if we did not click on no answer
+      if ($(element).is(':checked') && !$(element).parent().hasClass('dual_scale_no_answer') && !clickedNoAnswer) {
         $(element).prev().addClass('checked');
       }
+      // Add class=checked to no answer label if clicked
+	  if ( clickedNoAnswer) {
+        selectedInput.prev().addClass('checked');
+	  }
     });
   }
 
@@ -138,7 +134,7 @@ $(document).ready(function($){
   //* !The index */
   $('#index').addClass('index').children().removeClass('container').addClass('index-body');
 
- 
+
 
 
   //* !Slider Reset Adaptive Layout */

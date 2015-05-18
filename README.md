@@ -7,7 +7,7 @@ You are looking at the free version of our Bootstrap based LimeSurvey template.
 # Introduction
 We have tested the template and it works on version 2.05 of Limesurvey. We have not tested it on earlier versions, so it may probably not work on older versions.
 
-The template will work fine on all modern major browsers. IE8 is not modern, so it will probably fail in that browser. We did not develop this template for IE 8 and we will not support it for use on IE 8.
+The template will work fine on all modern major browsers: Internet Explorer version 9 and up, Chrome, Firefox, Opera, Safari. IE8 is not modern, so it will probably fail in that browser. 
 
 # License
 You are free to alter this template and to use it on any server you want. 
@@ -17,7 +17,7 @@ This template is licenced under GPL 2.0. This means you can do with it whatever 
 When you like this template please spread the word. Small donations are more than welcome as well.
 
 # Known Issues
-* print support is still poor (as in many templates...)
+* printing is possible, but print support is still poor
 * surveys do not work with a keyboard, at the moment it is mouse only
 * when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround:
 ** either upload the template using FTP to /upload/template or 
@@ -30,13 +30,14 @@ When you like this template please spread the word. Small donations are more tha
         'allowedtemplateuploads'=>'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff',
     )
 ```
+** or update to the most recent version of LimeSurvey, which will accept this template through the template editor.
 
 # Premium features
 Sometimes you may encounter aspects that seem to be failing: please check first if they have been solved in the Premium version.
 * All tables are fully responsive and thus a joy to view and work with on small devices
 * Slider questions (multiple numerical, slider layout) indicate whether they have been moved or not
-* The Premium version has more color, but not too much. We think that adds to the feeling of comfort of the respondent
-* The Premium version will be developed in several colors, while the Free version will only be available in 1 color: gray with signal colors.
+* The Premium (Gray) version has more color, but not too much. We think that adds to the feeling of comfort of the respondent
+* The Premium version will be further developed in several colors, while the Free version will only be available in 1 color: gray with signal colors.
 
 # New releases
 Since we hope to distribute improved versions periodically, we hope that you send us your improvements, so we can incorporate them in newer version. We cannot guarantee that we will incorporate all suggestions, but we will certainly look at them. Please visit our website for news on the template and to download the newest version and to send us your bug reports and suggestions for improvement.

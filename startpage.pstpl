@@ -19,12 +19,15 @@
 <link rel="stylesheet" href="{TEMPLATEURL}css/vendor/jquery/jquery-ui-custom.css" />
 <link rel="stylesheet" href="{TEMPLATEURL}css/vendor/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="{TEMPLATEURL}css/template.css" />
+<link rel="stylesheet" href="{TEMPLATEURL}template.css" />
 
 <!--[if lte IE 8]>
 <link rel="stylesheet" href="{TEMPLATEURL}css/template_ie8.css" />
+<link rel="stylesheet" href="{TEMPLATEURL}template_ie8.css" />
 <![endif]-->
 
 <script type="text/javascript" src="{TEMPLATEURL}js/template.js"></script>
+<script type="text/javascript" src="{TEMPLATEURL}template.js"></script>
 
 <link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico"/>
 {GOOGLE_ANALYTICS_JAVASCRIPT}
