@@ -2,12 +2,12 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">
 			<span class="required">{QUESTION_MANDATORY}</span>
-			<span class="question-text"><span class="question-number">{QUESTION_NUMBER}</span>{QUESTION_TEXT}</span>
+			<span class="question-number">{QUESTION_NUMBER}</span> <span class="question-code">({QUESTION_CODE})</span> <span class="question-text">{QUESTION_TEXT}</span>
 		</h3>
 	</div>
 	<div class="panel-body">		
 		<div class="answer">
-			<p class="text-danger question-scenaria">{QUESTION_SCENARIO}</p>
+			<p class="text-danger question-scenario">{QUESTION_SCENARIO}</p>
 			<p class="text-muted question-type-help">{QUESTION_TYPE_HELP}</p>
 			{ANSWER}
 			<p class="text-danger">{QUESTION_MAN_MESSAGE}</p>
