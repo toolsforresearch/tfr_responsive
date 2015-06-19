@@ -1,8 +1,8 @@
-<div class="tfr-progress">
+<div class="row tfr-progress">
     {PERCENTCOMPLETE}
 </div>
 
-<div class="survey-heading">
+<div class="row survey-heading">
     <div class="col-md-8 surveyname">
         <h1>{SURVEYNAME}</h1>
     </div>

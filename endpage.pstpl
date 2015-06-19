@@ -3,10 +3,21 @@
 </div><!-- .row -->
 
 
+
+<!-- Branding Tools for Research -->
+<div class="row">
+    <div class="survey-info">
+        <p>This free surveytemplate is lovingly crafted by the people of <a href="http://www.toolsforresearch.com/limesurvey-responsive-template" target="_blank">Tools&nbsp;for&nbsp;Research</a></p>
+        <a target="_blank" href="http://www.toolsforresearch.com/limesurvey-responsive-template"><img class="logo center-block" src="{TEMPLATEURL}images/tfr-small.png" alt="Tools for Research"></a>
+    </div>
+</div>
+
+
 </div><!-- .container -->
 </div><!-- .main -->
 </div><!-- .main-wrapper -->
 <script type="text/javascript" src="{TEMPLATEURL}js/vendor/bootstrap-sass/js/bootstrap.js"></script>
+<script type="text/javascript" src="{TEMPLATEURL}js/vendor/retina/retina.js"></script>
 <script type="text/javascript">
     // Initialize Javascript variables from LimeSurvey
     $(document).ready(function($) {

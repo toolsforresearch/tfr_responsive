@@ -1,6 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!--
 
+	Release: v1.4.0+20150619111812 build on 2015-6-19 11:18:43
+
 	ToolsForResearch Responsive for LimeSurvey
 	A Responsive LimeSurvey Template Based On Bootstrap 3
 	(c) 2015 Tools for Research (http://www.toolsforresearch.com/limesurvey-responsive-template)
@@ -21,7 +23,9 @@
 <link rel="stylesheet" href="{TEMPLATEURL}template.css" />
 
 <!--[if lte IE 8]>
-<link rel="stylesheet" href="{TEMPLATEURL}template_ie8.css" />
+    <script type="text/javascript">
+        alert('Internet Explorer 8 or lower is not supported in this theme');
+    </script>
 <![endif]-->
 
 <script type="text/javascript" src="{TEMPLATEURL}js/template.js"></script>

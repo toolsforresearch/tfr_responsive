@@ -1,9 +1,7 @@
 <div {QUESTION_ESSENTIALS} class="panel panel-default question {QUESTION_CLASS}{QUESTION_MAN_CLASS}{QUESTION_INPUT_ERROR_CLASS}">
     <div class="panel-heading">
         <h3 class="panel-title">
-            <span class="question-code">
             {if(!is_empty(QUESTION_CODE),"<span class='question-code'>"+QUESTION_CODE+"</span>","")}
-            </span>
             <span class="question-text">
                 {if(!is_empty(QUESTION_MANDATORY),"<span class='required'>"+QUESTION_MANDATORY+"</span>","")}
                 {if(!is_empty(QUESTION_NUMBER),"<span class='question-number'>"+QUESTION_NUMBER+"</span>","")}

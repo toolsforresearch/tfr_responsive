@@ -4,6 +4,45 @@ You are looking at the free version of our Bootstrap based LimeSurvey template.
 
 ***************************************************
 
+Release: v1.4.0+20150619111812 build on 2015-6-19 11:18:43
+
+# Release 1.4: Fixed errors/added features since release 1.3
+* exclusive option in multiple choice now works
+* equation is now also shown when it is only a value for a previous question
+* numerical input fields are now of reasonable length (not 100%)
+* total/remaining values are now nicely shown on multiple numerical (both on slider as well as with input fields)
+* array with checkboxes now works
+* fixed wrong indentation when no question numbers are used
+* better column headings alignment
+* better alignment for repeating headers in very long arrays
+* logo at the bottom of the page now easier to remove
+* warning when javascript is not installed is now shown (it wasn't)
+* better styling of min/max values in slider questions
+* date and time elements are now shown side by side
+* question code is now styled such that it is better distinguishable from question number
+* better positioning of survey title
+* slider left/right texts are now better positioned
+* version numbers are now in the template.css which makes it easier for us to support users
+
+# Known Issues
+* printing is possible, but print support is still poor
+* surveys do not work with a keyboard, at the moment it is mouse only
+* dialog for uploading files needs better styling (it is now a mix of standard jQuery and our design)
+* dialog for date/time setting needs better styling (same as above)
+* when using the LimeSurvey template upload method, fonts files cannot be installed in previous builds of LimeSurvey. We therefore installed fonts on our servers, which will be called from your survey. If you do not wish that that happens, please use the following workaround:
+
+Workaround:
+** either upload the template using FTP to /upload/template or 
+** before uploading the template through the template editor: edit the file /application/config/config-defaults.php at the place where allowedtemplateuploads are declared. Add to the list the following extensions: map, eot, json, svg, ttf, woff
+** or run: [your survey root ]/application/config/config.php and add:  
+```
+'config'=>array(
+        'debug'=>0,
+        'debugsql'=>0,
+        'allowedtemplateuploads'=>'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff',
+    )
+```
+** or update to the most recent version of LimeSurvey, which will accept this template through the template editor.
 # Introduction
 We have tested the template and it works on version 2.05 of Limesurvey. We have not tested it on earlier versions, so it may probably not work on older versions.
 
@@ -15,22 +54,6 @@ You are free to alter this template and to use it on any server you want.
 This template is licenced under GPL 2.0. This means you can do with it whatever you want. But: please contact us on all found errors and possible improvements. We like to keep up to date!
 
 When you like this template please spread the word. Small donations are more than welcome as well.
-
-# Known Issues
-* printing is possible, but print support is still poor
-* surveys do not work with a keyboard, at the moment it is mouse only
-* when using the LimeSurvey template upload method, fonts files cannot be installed. Workaround:
-** either upload the template using FTP to /upload/template or 
-** edit the file /application/config/config-defaults.php at the place where allowedtemplateuploads are declared. Add to the list the following extensions: map, eot, json, svg, ttf, woff
-** or run: [your survey root ]/application/config/config.php and add:  
-```
-'config'=>array(
-        'debug'=>0,
-        'debugsql'=>0,
-        'allowedtemplateuploads'=>'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff',
-    )
-```
-** or update to the most recent version of LimeSurvey, which will accept this template through the template editor.
 
 # Premium features
 Sometimes you may encounter aspects that seem to be failing: please check first if they have been solved in the Premium version.
