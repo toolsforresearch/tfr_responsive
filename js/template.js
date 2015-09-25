@@ -5,14 +5,21 @@
 
 //* !init */
 $(document).ready(function($){
-  if (jQuery('select.languagechanger option').size() < 2) {
-    $('div.languageswitcher').hide();
-    $('div.surveyname').removeClass('col-md-8').addClass('col-md-12');
-  }
 
   //* !vars */
   var groupHeader=$('.group-heading h1'), // 
     questionInput=$('td > input'); // checked tablecell toggle
+
+
+  //* !Body extra class */
+  $('body').addClass('tfr_responsive');
+
+
+  //* !Language Switcher */
+  if (jQuery('select.languagechanger option').size() < 2) {
+    $('div.languageswitcher').hide();
+    $('div.surveyname').removeClass('col-md-8').addClass('col-md-12');
+  }
 
 
   //* !Progress Bar */
@@ -119,18 +126,57 @@ $(document).ready(function($){
   
 
   //* !Empty elements */
-  // Hide empty elements
+  // Check for empty elements and remove them from the DOM
+  
+  
+  // Remove help-image for the DOM because we don't use it
+  $('.survey-question-help').each(function(){
+    $(this).find('img').detach();
+  });
+  
+  // Check for empty h1 in .group-heading
   if (groupHeader.html() == '') {
-    groupHeader.parent().css({'display': 'none'});
+    groupHeader.parent().detach();
   }
 
-
-  // Check for empty spans in panel-title divs and hide empty
+  // Check for empty spans in panel-title
   $('.panel-title span').each(function(){
-    //if ($(this).html() == '') {
     if ($(this).html() == '' && $(this).attr('id').indexOf('LEMtailor')==-1) { //ayh 06.06.15
-      $(this).hide();
+      $(this).detach();
     }
+  });
+
+  // Check for empties within the answers area of the questions PE 20.08.15
+  // This consists of several steps:
+  
+  // 1. Check for empty .emtip in .questionhelp
+  $('.emtip').each(function(){
+    if ($(this).html() == '') {
+      $(this).detach(); // remove the element
+    }
+  });
+  
+  // 2. Check for empty .questionhelp
+  $('.questionhelp').each(function(){
+    if ($(this).html() == '') {
+      $(this).detach(); // remove the element
+    }
+  });
+  
+  // 3. Check for empty .text-success
+  // - we do this as a separate step so we don't detach it when some other content besides .questionhelp exists
+  $('.text-success').each(function(){
+    if ($(this).html() == '') {
+      $(this).detach(); // remove the element
+    }
+  });
+
+  // 4. Check for questiontypes TextDisplay (= .boilerplate) and Equation
+  $('.boilerplate, .equation').each(function(){
+    // first we check for instances of .survey-question-help and flag this question
+    $(this).has('.survey-question-help').addClass('includes-surveyquestionhelp');
+    // finally target all questions within this questiontype without flag and remove them
+    $(this).not('.includes-surveyquestionhelp').find('.panel-body').detach();
   });
 
 
@@ -200,10 +246,46 @@ $(document).ready(function($){
   //});
 
 
-  //* !Table Totals class-renaming */
+  //* !Table Totals class-renaming */ PE
   $('table').each(function(){
     $(this).removeClass('row').addClass('rows');
     $(this).removeClass('col').addClass('cols');
+  });
+
+
+  //* !Columns */ PE
+  // Wrapper with standard BS column classes
+  $('.cols-2-ul').wrap( '<div class="cols col-md-6"></div>' );
+  $('.cols-3-ul').wrap( '<div class="cols col-md-4"></div>' );
+  $('.cols-4-ul').wrap( '<div class="cols col-sm-6 col-md-3"></div>' );
+  $('.cols-6-ul').wrap( '<div class="cols col-sm-4 col-md-2"></div>' );
+  // Wrapper based on LimeSurvey column solution
+  $('.cols-5-ul').wrap( '<div class="cols col-md-5"></div>' );
+  
+  
+  //* jQuery UI overrides */
+  
+  ////* !Disable un-intentional Draggable behaviour */
+  //// option 1
+  //$('.dialog-upload').dialog({
+  //  draggable: false
+  //// option 2
+  //$('.dialog-upload').draggable({disabled: true});
+  //});
+  //// option 3
+  //$('a.upload').on('click',function(event){
+  //  $(this).closest('.dialog-upload').removeClass('ui-draggable');
+  //});  
+
+  
+  //* !Enter Issues */ Jan
+  // Prevent submit next (Chrome, Firefox) or previous (Safari, IE11) on Enter in text field
+  // Inspiration: http://stackoverflow.com/a/21800607/872051
+  $('input.text').keypress(function(event){ 
+    if (event.keyCode == 13){
+      event.preventDefault();
+      $(this).trigger('change');
+    }
   });
 
 });
