@@ -7,8 +7,25 @@ You are looking at the free version of our Bootstrap based LimeSurvey template.
 Release: v1.5.0 build on 2015-9-25 11:44:17
 
 #Release 1.5: Fixed errors/added features since release 1.4
-* added explanation on using retina.js in the template (see below)
-* added support for 2, 3, 4, 6 columns in multiple choice questions. We did this using the Bootstrap setup, therefore no support yet for 5, 7, 8, 9 columns, sorry.
+This release show some bug fixes and some enhancements:
+
+ * input width on short text questions: now 100% on mobile devices and user setting on larger screens
+ * introduction of retina.js, so images will use [image-title]@2x.png and [image-title]@3x.png when available, so images may look good on retina displays too.
+ * enter by keyboard made user go to previous page on some browsers. Now "enter" does not do anything, but trigger the "change"
+ * there was a difference in styling of the top of the page between single language and multi-language surveys. That is not there anymore.
+ * Text-display questions now only show the help-text area, when there is something to show in the help-text area.
+ * date selects now show text in correct color (was green)
+ * the style.css file has shrunk from ~260 kB to 133 kB
+ * re-styling of datepicker and filepicker (jQuery)
+ * IMPORTANT: load fonts from local server again (see below)
+ * added support for 2, 3, 4, 6 columns in multiple choice questions. We did this using the Bootstrap setup, therefore no support yet for 5, 7, 8, 9 columns, sorry.
+
+*Important for people that use the LimeSurvey Template Editor for uploading templates.*
+Until version LimeSurvey 2.05 font files that are present in the template could not be uploaded to the limesurvey installation by default. So if you have a LimeSurvey installation that uses software from before June 16, 2015, your template will possibly not upload the font files, which will result in missing icons.
+There are three possible solutions to this problem:
+ 1. upgrade your Limesurvey installation to a version that is newer than June 16, 2015
+ 2. in your configuration file of LimeSurvey, that resides in: /application/config/config-defaults.php you have to change the line that starts with: *$config['allowedtemplateuploads'] =* into: *$config['allowedtemplateuploads'] = 'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff,txt,MD';*
+ 3. or upload the template using FTP to: /upload/templates
 
 # Release 1.4: Fixed errors/added features since release 1.3
 * exclusive option in multiple choice now works
