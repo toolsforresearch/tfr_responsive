@@ -4,7 +4,11 @@ You are looking at the free version of our Bootstrap based LimeSurvey template.
 
 ***************************************************
 
-Release: v1.4.0+20150619111812 build on 2015-6-19 11:18:43
+Release: v1.5.0 build on 2015-9-25 11:44:17
+
+#Release 1.5: Fixed errors/added features since release 1.4
+* added explanation on using retina.js in the template (see below)
+* added support for 2, 3, 4, 6 columns in multiple choice questions. We did this using the Bootstrap setup, therefore no support yet for 5, 7, 8, 9 columns, sorry.
 
 # Release 1.4: Fixed errors/added features since release 1.3
 * exclusive option in multiple choice now works
@@ -61,6 +65,9 @@ Sometimes you may encounter aspects that seem to be failing: please check first 
 * Slider questions (multiple numerical, slider layout) indicate whether they have been moved or not
 * The Premium (Gray) version has more color, but not too much. We think that adds to the feeling of comfort of the respondent
 * The Premium version will be further developed in several colors, while the Free version will only be available in 1 color: gray with signal colors.
+
+# On using images (all versions of the template)
+Because we want your survey to look crisp and clear on all devices, we have implemented retina.js (from http://imulus.github.io/retinajs/). Using retina.js is optional; you can add images at will, but when you add the same images in retina quality, the script replaces the default image with the retinaimages (imagename@2x.png for example), displaying a higher resolution image on specific devices, like Apple Retina iPads.
 
 # New releases
 Since we hope to distribute improved versions periodically, we hope that you send us your improvements, so we can incorporate them in newer version. We cannot guarantee that we will incorporate all suggestions, but we will certainly look at them. Please visit our website for news on the template and to download the newest version and to send us your bug reports and suggestions for improvement.
