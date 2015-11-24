@@ -6,11 +6,6 @@
 //* !init */
 $(document).ready(function($){
 
-  //* !vars */
-  var groupHeader=$('.group-heading h1'), // 
-    questionInput=$('td > input'); // checked tablecell toggle
-
-
   //* !Body extra class */
   $('body').addClass('tfr_responsive');
 
@@ -48,14 +43,23 @@ $(document).ready(function($){
   });
 
 
+  //* !Better borderstyling first radio- & checkboxlist  */
+  // insert an empty element which can be styled accordingly
+  $('ul.radio-list, ul.checkbox-list').each(function(){
+    $(this).prepend('<li class="answer-item ruler"></li>');
+  });
+
   //* !Checked tablecell toggle  */
   // init: Loop through all radio and checkboxes and set class if checked
+  var questionInput=$('td > input');
   questionInput.each(function(index, element){
     if ($(element).is(':checked')) {
       $(element).parent().toggleClass('checked');
     }
   });
 
+
+  //* !Dual Scale array  */
   // Make sure each input is before it's label for .array-flexible-duel-scale
   $('td > input', $('.array-flexible-duel-scale')).each(function(index, elem){
     var $elem = $(elem);
@@ -128,16 +132,17 @@ $(document).ready(function($){
   //* !Empty elements */
   // Check for empty elements and remove them from the DOM
   
-  
   // Remove help-image for the DOM because we don't use it
   $('.survey-question-help').each(function(){
     $(this).find('img').detach();
   });
   
-  // Check for empty h1 in .group-heading
-  if (groupHeader.html() == '') {
-    groupHeader.parent().detach();
-  }
+  // Check for empty elements in .group-heading
+  $('.group-heading h1, .group-heading .group-description').each(function(){
+    if ($(this).html() == '') {
+      $(this).detach();
+    }
+  });
 
   // Check for empty spans in panel-title
   $('.panel-title span').each(function(){
@@ -227,12 +232,28 @@ $(document).ready(function($){
     
   
   //* !Better DOM structure on Other & Commenting Options */ PE
-  // Change the DOM on the checkbox questions with an "Other" choice (same as on the radio questions)
+  // Change the DOM on the checkbox questions with an "Other" choice (multiple-opt) (same as on the radio questions)
   $('li.checkbox-item.other-item').each(function(){
     $(this).append('<label class="otheritem" for="othertext"></label>');
     $(this).children('input.text').detach().appendTo($(this).children('label.otheritem'));
   });
-  // Change the DOM on the checkbox questions with an commenting-option so they look & act the same
+  // Create a styling hook on "Other" choice (multiple-opt-comments)
+  $('li.checkbox-text-item.other-item .option input').keyup(function(){
+    if( $(this).val() ) {
+      $(this).parent().addClass('checked');
+    } else {
+      $(this).parent().removeClass('checked');
+    }
+  });
+  // Create a styling hook on "Comment" choice (multiple-opt-comments)
+  $('li.checkbox-text-item .comment input').keyup(function(){
+    if( $(this).val() ) {
+      $(this).parent().addClass('commented');
+    } else {
+      $(this).parent().removeClass('commented');
+    }
+  });
+  // Change the DOM on the checkbox questions with an commenting-option so the comments look the same (multiple-opt-comments)
   $('li.checkbox-text-item span.comment').each(function(){
     $(this).append('<label class="answer-comment-wrapper" for="comment"></label>');
     $(this).children('input.text').detach().appendTo($(this).children('label.answer-comment-wrapper'));

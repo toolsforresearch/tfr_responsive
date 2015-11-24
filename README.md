@@ -4,28 +4,19 @@ You are looking at the free version of our Bootstrap based LimeSurvey template.
 
 ***************************************************
 
-Release: v1.5.0 build on 2015-9-25 11:44:17
+Release: v1.6.0 build on 2015-11-24 13:28:1
+#Release 1.6: Fixed errors/added features since release 1.5
+* better styling of file upload dialog and time picker(jQuery)
+* group description now also shows when only group description (and not group title) should show up
+* HTML in subquestions and headings of array questions now works
+* boilerplate question (text display) now only shows heading when help text is not available
+* unnecessary CSS removed, so resulting CSS is lighter (but still ....)
+* 5 point array with stars now also styled (we had never seen this one before...)
+* several smaller issues with margins and paddings...
 
 #Release 1.5: Fixed errors/added features since release 1.4
-This release show some bug fixes and some enhancements:
-
- * input width on short text questions: now 100% on mobile devices and user setting on larger screens
- * introduction of retina.js, so images will use [image-title]@2x.png and [image-title]@3x.png when available, so images may look good on retina displays too.
- * enter by keyboard made user go to previous page on some browsers. Now "enter" does not do anything, but trigger the "change"
- * there was a difference in styling of the top of the page between single language and multi-language surveys. That is not there anymore.
- * Text-display questions now only show the help-text area, when there is something to show in the help-text area.
- * date selects now show text in correct color (was green)
- * the style.css file has shrunk from ~260 kB to 133 kB
- * re-styling of datepicker and filepicker (jQuery)
- * IMPORTANT: load fonts from local server again (see below)
- * added support for 2, 3, 4, 6 columns in multiple choice questions. We did this using the Bootstrap setup, therefore no support yet for 5, 7, 8, 9 columns, sorry.
-
-*Important for people that use the LimeSurvey Template Editor for uploading templates.*
-Until version LimeSurvey 2.05 font files that are present in the template could not be uploaded to the limesurvey installation by default. So if you have a LimeSurvey installation that uses software from before June 16, 2015, your template will possibly not upload the font files, which will result in missing icons.
-There are three possible solutions to this problem:
- 1. upgrade your Limesurvey installation to a version that is newer than June 16, 2015
- 2. in your configuration file of LimeSurvey, that resides in: /application/config/config-defaults.php you have to change the line that starts with: *$config['allowedtemplateuploads'] =* into: *$config['allowedtemplateuploads'] = 'gif,ico,jpg,png,css,js,map,json,eot,svg,ttf,woff,txt,MD';*
- 3. or upload the template using FTP to: /upload/templates
+* added explanation on using retina.js in the template (see below)
+* added support for 2, 3, 4, 6 columns in multiple choice questions. We did this using the Bootstrap setup, therefore no support yet for 5, 7, 8, 9 columns, sorry.
 
 # Release 1.4: Fixed errors/added features since release 1.3
 * exclusive option in multiple choice now works
@@ -47,9 +38,8 @@ There are three possible solutions to this problem:
 
 # Known Issues
 * printing is possible, but print support is still poor
-* surveys do not work with a keyboard, at the moment it is mouse only
-* dialog for uploading files needs better styling (it is now a mix of standard jQuery and our design)
-* dialog for date/time setting needs better styling (same as above)
+* surveys do not work completely with a keyboard, at the moment it is mouse only
+* the template uses left to right orientation (LTR) only. RTL is not tested. Anyone that wants to contribute to a RTL version is welcome.
 * when using the LimeSurvey template upload method, fonts files cannot be installed in previous builds of LimeSurvey. We therefore installed fonts on our servers, which will be called from your survey. If you do not wish that that happens, please use the following workaround:
 
 Workaround:
@@ -64,8 +54,9 @@ Workaround:
     )
 ```
 ** or update to the most recent version of LimeSurvey, which will accept this template through the template editor.
+
 # Introduction
-We have tested the template and it works on version 2.05 of Limesurvey. We have not tested it on earlier versions, so it may probably not work on older versions.
+We have tested the template and it works on version 2.05/2.06 of Limesurvey. We have not tested it on earlier versions, so it may probably not work on older versions.
 
 The template will work fine on all modern major browsers: Internet Explorer version 9 and up, Chrome, Firefox, Opera, Safari. IE8 is not modern, so it will probably fail in that browser. 
 
@@ -97,7 +88,7 @@ Each new version of the template will also be released on the LimeSurvey website
 https://www.limesurvey.org/en/extensions/55-templates
 
 # Credits
-This template was defined by Tools for Research and designed by Peter Emil van den Berg of pixelliquid. We had great help from Marco Alting and Clemens Tolboom. They have ironed out a workflow which makes it easier for us to have different versions of the template.
+This template was defined by Tools for Research and designed by Peter Emil van den Berg of pixelliquid. We had great help from Marco Alting and Clemens Tolboom. They have ironed out a workflow using Grunt which makes it easier for us to have different versions of the template.
 
 # Inspiration
 When we started working on this template we looked around if anyone had already done work on this. We found the work by mofog at: https://github.com/mofog/BootstrapForLimeSurvey This inspired us, thank you, mofog!
@@ -109,6 +100,6 @@ Tools for Research is a serious LimeSurvey user. We focus on research projects i
 * Value2Share (Consulting)
 * Antonius Ziekenhuis (Hospital)
 
-We are based in The Netherlands, we work for clients in The Netherlands and the USA. But never hesitate to contact us, wherever you are in the universe. We will expand!
+We are based in The Netherlands, we work for clients wherever in the universe. But never hesitate to contact us, wherever you are in the universe. We will expand!
 
 http://www.toolsforresearch.com/contact

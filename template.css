@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
- * Release: v1.5.0 build on 2015-9-25 11:44:17
+ * Release: v1.6.0 build on 2015-11-24 13:28:1
  */
 *,
 *:before,
@@ -2530,18 +2530,26 @@ tbody.collapse.in {
 
 input[type='radio'] + label:before, input[type='radio'] + .label:before,
 input[type='checkbox'] + label:before,
-input[type='checkbox'] + .label:before, td.radio-item label:before, td.radio-item .label:before,
+input[type='checkbox'] + .label:before,
+.other-item label:before,
+.other-item .label:before,
+label.answer-comment-wrapper:before,
+.answer-comment-wrapper.label:before, td.radio-item label:before, td.radio-item .label:before,
 td.checkbox-item label:before,
-td.checkbox-item .label:before, .emtip:before, .input-error .errormandatory:before, .survey-question-help:before, .warningjs:before, .ui-icon:before, .ui-icon:after, a.upload-edit:before, .slider-reset:before {
+td.checkbox-item .label:before, .emtip:before, .input-error .errormandatory:before, .survey-question-help:before, .star-rating:before, .warningjs:before, .ui-icon:before, .ui-icon:after, a.upload-edit:before, .slider-reset:before {
   font-family: "surv";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 input[type='radio'] + label:before, input[type='radio'] + .label:before,
 input[type='checkbox'] + label:before,
-input[type='checkbox'] + .label:before, td.radio-item label:before, td.radio-item .label:before,
+input[type='checkbox'] + .label:before,
+.other-item label:before,
+.other-item .label:before,
+label.answer-comment-wrapper:before,
+.answer-comment-wrapper.label:before, td.radio-item label:before, td.radio-item .label:before,
 td.checkbox-item label:before,
-td.checkbox-item .label:before, .emtip:before, .input-error .errormandatory:before, .survey-question-help:before, .warningjs:before {
+td.checkbox-item .label:before, .emtip:before, .input-error .errormandatory:before, .survey-question-help:before, .star-rating:before, .warningjs:before {
   font-size: 2.1rem; }
 
 .index li, .index .index-body div {
@@ -2601,9 +2609,6 @@ body, .label {
     body .main-wrapper .main, .label .main-wrapper .main {
       margin: 0 auto;
       padding: 1.5rem 0; }
-      @media (max-width: 768px) {
-        body .main-wrapper .main, .label .main-wrapper .main {
-          margin: 0 0.75rem; } }
 
 .container {
   max-width: 1200px;
@@ -2625,17 +2630,15 @@ div.content {
   margin-right: -1.5rem; }
   @media (max-width: 768px) {
     .row {
-      margin-left: -1rem;
-      margin-right: -1rem; } }
-  @media (max-width: 480px) {
-    .row {
       margin-left: -0.75rem;
       margin-right: -0.75rem; } }
 
 *[class*='col-md'] {
   padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding: 1rem 1.5rem; }
+  padding-right: 1.5rem; }
+  @media (min-width: 768px) {
+    *[class*='col-md'] {
+      padding: 1rem 1.5rem; } }
   @media (max-width: 768px) {
     *[class*='col-md'] {
       padding: 1rem; } }
@@ -2645,9 +2648,14 @@ div.content {
 
 .col-md-12 {
   padding: 0; }
-  .col-md-12.surveyname {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem; }
+  @media (min-width: 768px) {
+    .col-md-12.surveyname {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; } }
+  @media (max-width: 768px) {
+    .col-md-12.surveyname {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
 
 .register-dialog {
   margin: 1.5rem 0 0; }
@@ -2664,14 +2672,16 @@ h1, .jumbotron h1, #wrapper h1 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.45rem;
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+  line-height: 3.3rem; }
 
 h2, h3 {
   color: #666666;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.0825rem;
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+  line-height: 2.75rem; }
 
 @media (max-width: 768px) {
   h1, .jumbotron h1, #wrapper h1 {
@@ -2831,75 +2841,67 @@ select.year, select.month, select.day, select.hour, select.minute, select.second
 .date select:last-of-type {
   margin-right: 0; }
 
-.radio-list,
-.checkbox-list,
-.checkbox-text-list {
-  border-top: 1px solid rgba(102, 102, 102, 0.35); }
-  .radio-list + ul,
-  .checkbox-list + ul,
-  .checkbox-text-list + ul {
-    border-top: none; }
-  .radio-list li,
-  .checkbox-list li,
-  .checkbox-text-list li {
-    border-top: 1px solid rgba(255, 255, 255, 0.35);
-    border-bottom: 1px solid rgba(102, 102, 102, 0.35); }
-    .radio-list li:hover,
-    .checkbox-list li:hover,
-    .checkbox-text-list li:hover {
-      color: #666666;
-      background-color: rgba(238, 238, 238, 0.5); }
-  .radio-list li label, .radio-list li .label,
-  .checkbox-list li label,
-  .checkbox-list li .label,
-  .checkbox-text-list li label,
-  .checkbox-text-list li .label {
-    position: relative;
-    display: block;
-    padding-left: 4.5rem; }
-  .radio-list li label.otheritem, .radio-list li .otheritem.label,
-  .radio-list li label[for*='othertext'],
-  .radio-list li [for*='othertext'].label,
-  .checkbox-list li label.otheritem,
-  .checkbox-list li .otheritem.label,
-  .checkbox-list li label[for*='othertext'],
-  .checkbox-list li [for*='othertext'].label,
-  .checkbox-text-list li label.otheritem,
-  .checkbox-text-list li .otheritem.label,
-  .checkbox-text-list li label[for*='othertext'],
-  .checkbox-text-list li [for*='othertext'].label {
-    padding-top: 0;
-    padding-right: 1.5rem; }
-  .multiple-opt-comments .radio-list li.other label[for*='other'], .multiple-opt-comments .radio-list li.other [for*='other'].label, .multiple-opt-comments
-  .checkbox-list li.other label[for*='other'], .multiple-opt-comments
-  .checkbox-list li.other [for*='other'].label, .multiple-opt-comments
-  .checkbox-text-list li.other label[for*='other'], .multiple-opt-comments
-  .checkbox-text-list li.other [for*='other'].label {
-    padding-right: 1.5rem; }
-    .multiple-opt-comments .radio-list li.other label[for*='other'] input, .multiple-opt-comments .radio-list li.other [for*='other'].label input, .multiple-opt-comments
-    .checkbox-list li.other label[for*='other'] input, .multiple-opt-comments
-    .checkbox-list li.other [for*='other'].label input, .multiple-opt-comments
-    .checkbox-text-list li.other label[for*='other'] input, .multiple-opt-comments
-    .checkbox-text-list li.other [for*='other'].label input {
-      margin-top: 1.5rem; }
-  .radio-list li label.answer-comment-wrapper, .radio-list li .answer-comment-wrapper.label,
-  .checkbox-list li label.answer-comment-wrapper,
-  .checkbox-list li .answer-comment-wrapper.label,
-  .checkbox-text-list li label.answer-comment-wrapper,
-  .checkbox-text-list li .answer-comment-wrapper.label {
-    padding-right: 1.5rem; }
-  .radio-list label:hover, .radio-list .label:hover,
-  .radio-list input:focus + label,
-  .radio-list input:focus + .label,
-  .checkbox-list label:hover,
-  .checkbox-list .label:hover,
-  .checkbox-list input:focus + label,
-  .checkbox-list input:focus + .label,
-  .checkbox-text-list label:hover,
-  .checkbox-text-list .label:hover,
-  .checkbox-text-list input:focus + label,
-  .checkbox-text-list input:focus + .label {
-    cursor: pointer; }
+.radio-list li,
+.checkbox-list li,
+.checkbox-text-list li {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(102, 102, 102, 0.35); }
+  .radio-list li:hover,
+  .checkbox-list li:hover,
+  .checkbox-text-list li:hover {
+    color: #666666;
+    background-color: rgba(238, 238, 238, 0.5); }
+.radio-list li label, .radio-list li .label,
+.checkbox-list li label,
+.checkbox-list li .label,
+.checkbox-text-list li label,
+.checkbox-text-list li .label {
+  position: relative;
+  display: block;
+  padding-left: 4.5rem; }
+.radio-list li label.otheritem, .radio-list li .otheritem.label,
+.radio-list li label[for*='othertext'],
+.radio-list li [for*='othertext'].label,
+.checkbox-list li label.otheritem,
+.checkbox-list li .otheritem.label,
+.checkbox-list li label[for*='othertext'],
+.checkbox-list li [for*='othertext'].label,
+.checkbox-text-list li label.otheritem,
+.checkbox-text-list li .otheritem.label,
+.checkbox-text-list li label[for*='othertext'],
+.checkbox-text-list li [for*='othertext'].label {
+  padding-top: 0;
+  padding-right: 1.5rem; }
+.multiple-opt-comments .radio-list li.other label[for*='other'], .multiple-opt-comments .radio-list li.other [for*='other'].label, .multiple-opt-comments
+.checkbox-list li.other label[for*='other'], .multiple-opt-comments
+.checkbox-list li.other [for*='other'].label, .multiple-opt-comments
+.checkbox-text-list li.other label[for*='other'], .multiple-opt-comments
+.checkbox-text-list li.other [for*='other'].label {
+  padding-right: 1.5rem; }
+  .multiple-opt-comments .radio-list li.other label[for*='other'] input, .multiple-opt-comments .radio-list li.other [for*='other'].label input, .multiple-opt-comments
+  .checkbox-list li.other label[for*='other'] input, .multiple-opt-comments
+  .checkbox-list li.other [for*='other'].label input, .multiple-opt-comments
+  .checkbox-text-list li.other label[for*='other'] input, .multiple-opt-comments
+  .checkbox-text-list li.other [for*='other'].label input {
+    margin-top: 1.5rem; }
+.radio-list li label.answer-comment-wrapper, .radio-list li .answer-comment-wrapper.label,
+.checkbox-list li label.answer-comment-wrapper,
+.checkbox-list li .answer-comment-wrapper.label,
+.checkbox-text-list li label.answer-comment-wrapper,
+.checkbox-text-list li .answer-comment-wrapper.label {
+  padding-right: 1.5rem; }
+.radio-list label:hover, .radio-list .label:hover,
+.radio-list input:focus + label,
+.radio-list input:focus + .label,
+.checkbox-list label:hover,
+.checkbox-list .label:hover,
+.checkbox-list input:focus + label,
+.checkbox-list input:focus + .label,
+.checkbox-text-list label:hover,
+.checkbox-text-list .label:hover,
+.checkbox-text-list input:focus + label,
+.checkbox-text-list input:focus + .label {
+  cursor: pointer; }
 
 input[type='radio'],
 input[type='checkbox'] {
@@ -2910,7 +2912,11 @@ input[type='checkbox'] {
 
 input[type='radio'] + label:before, input[type='radio'] + .label:before,
 input[type='checkbox'] + label:before,
-input[type='checkbox'] + .label:before {
+input[type='checkbox'] + .label:before,
+.other-item label:before,
+.other-item .label:before,
+label.answer-comment-wrapper:before,
+.answer-comment-wrapper.label:before {
   position: absolute;
   left: 1.25rem;
   color: #4d4d4d;
@@ -2918,15 +2924,24 @@ input[type='checkbox'] + .label:before {
   filter: alpha(opacity=15); }
 input[type='radio'] + label:hover:before, input[type='radio'] + .label:hover:before,
 input[type='checkbox'] + label:hover:before,
-input[type='checkbox'] + .label:hover:before {
+input[type='checkbox'] + .label:hover:before,
+.other-item label:hover:before,
+.other-item .label:hover:before,
+label.answer-comment-wrapper:hover:before,
+.answer-comment-wrapper.label:hover:before {
   opacity: 0.5;
   filter: alpha(opacity=50); }
 
 input[type='radio'] + label:before, input[type='radio'] + .label:before {
   content: ""; }
 
-input[type='checkbox'] + label:before, input[type='checkbox'] + .label:before {
+input[type='checkbox'] + label:before, input[type='checkbox'] + .label:before,
+.other-item label.answertext:before,
+.other-item .answertext.label:before {
   content: ""; }
+
+label[class*="comment"]:before, [class*="comment"].label:before {
+  content: ""; }
 
 input[type='radio']:checked + label, input[type='radio']:checked + .label,
 input[type='checkbox']:checked + label,
@@ -2948,11 +2963,11 @@ input[type='checkbox']:checked + .label {
     color: white;
     opacity: 1;
     filter: alpha(opacity=100); }
-input[type='radio']:checked ~ label[for*="other"], input[type='radio']:checked ~ [for*="other"].label, input[type='radio']:checked ~ label[for*="comment"], input[type='radio']:checked ~ [for*="comment"].label,
+input[type='radio']:checked ~ label[for*="other"], input[type='radio']:checked ~ [for*="other"].label, input[type='radio']:checked ~ label.commented, input[type='radio']:checked ~ .commented.label,
 input[type='checkbox']:checked ~ label[for*="other"],
 input[type='checkbox']:checked ~ [for*="other"].label,
-input[type='checkbox']:checked ~ label[for*="comment"],
-input[type='checkbox']:checked ~ [for*="comment"].label {
+input[type='checkbox']:checked ~ label.commented,
+input[type='checkbox']:checked ~ .commented.label {
   background-color: #496b38; }
 
 input[type='radio']:checked + label:before, input[type='radio']:checked + .label:before {
@@ -2960,6 +2975,29 @@ input[type='radio']:checked + label:before, input[type='radio']:checked + .label
 
 input[type='checkbox']:checked + label:before, input[type='checkbox']:checked + .label:before {
   content: ""; }
+
+.other-item label.checked, .other-item .checked.label {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  background-color: #496b38;
+  background-image: -moz-linear-gradient(#638f4d, #496b38);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#638f4d), to(#496b38));
+  background-image: -webkit-linear-gradient(#638f4d, #496b38);
+  background-image: -o-linear-gradient(#638f4d, #496b38); }
+  .other-item label.checked:hover, .other-item .checked.label:hover {
+    color: white; }
+  .other-item label.checked:before, .other-item .checked.label:before {
+    content: "";
+    color: white;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+
+.comment label.commented, .comment .commented.label {
+  background-color: #496b38; }
+  .comment label.commented:before, .comment .commented.label:before {
+    color: white;
+    opacity: 0.5;
+    filter: alpha(opacity=50); }
 
 input[type='radio']:checked + label:hover, input[type='radio']:checked + .label:hover {
   cursor: default; }
@@ -3049,6 +3087,10 @@ td.checkbox-item .label {
     td.checkbox-item label.hide, .register
     td.checkbox-item .hide.label {
       display: none !important; }
+  td.radio-item label img, td.radio-item .label img,
+  td.checkbox-item label img,
+  td.checkbox-item .label img {
+    display: none; }
 td.radio-item.checked label:before, td.radio-item.checked .label:before,
 td.checkbox-item.checked label:before,
 td.checkbox-item.checked .label:before {
@@ -3059,14 +3101,16 @@ td.checkbox-item.checked .label:before {
 td.radio-item label:before, td.radio-item .label:before {
   content: ""; }
 td.radio-item.checked label, td.radio-item.checked .label {
-  color: transparent !important;
-  text-shadow: none !important;
-  background-color: transparent !important;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
   background-color: transparent;
   background-image: -moz-linear-gradient(transparent, transparent);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(transparent));
   background-image: -webkit-linear-gradient(transparent, transparent);
   background-image: -o-linear-gradient(transparent, transparent); }
+  td.radio-item.checked label:hover, td.radio-item.checked .label:hover {
+    color: transparent; }
   td.radio-item.checked label:before, td.radio-item.checked .label:before {
     content: ""; }
 
@@ -3092,6 +3136,7 @@ td.checkbox-item input[type='checkbox']:checked + label, td.checkbox-item input[
 table {
   width: 100%; }
   table tr {
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
     border-bottom: 1px solid rgba(102, 102, 102, 0.35); }
   table thead th {
     text-align: center; }
@@ -3114,9 +3159,11 @@ table {
     background-color: rgba(238, 238, 238, 0.25); }
   table.table-striped > tbody > tr:hover td, table > tbody > tr:hover td, table.table-striped > tbody > tr:hover th, table > tbody > tr:hover th {
     background-color: rgba(238, 238, 238, 0.5); }
-  table .dual_scale_separator {
+  table .dual_scale_separator, table td.ddarrayseparator {
     background: url(images/dot-1x3.png) repeat-y center top;
     opacity: 0.75; }
+  table tbody .dsheader {
+    display: none; }
   table colgroup col.radio-list {
     border-top: none; }
   table td.total label, table td.total .label {
@@ -3301,28 +3348,30 @@ button.primary, .primary.ui-button, .ui-dialog button.upload-button, .ui-dialog 
   margin: 1.5rem 0; }
 
 .panel {
-  margin-bottom: 3rem;
   border: none;
   border-radius: 4px;
   background-color: transparent; }
-  .panel.panel-default.group {
-    margin-top: 1.5rem;
+  .panel.group {
     background-color: transparent; }
+    .panel.group > .panel-body {
+      padding: 0; }
   .panel.question {
     border: 1px solid rgba(102, 102, 102, 0.35);
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 3rem; }
 
-.group-heading, *[id*='question'] .panel-heading {
+.group-heading h1, .group-heading #wrapper h1, #wrapper .group-heading h1, .group-heading .group-description {
   padding: 1rem 1.5rem; }
   @media (max-width: 768px) {
-    .group-heading, *[id*='question'] .panel-heading {
-      padding: 1rem; } }
-  @media (max-width: 480px) {
-    .group-heading, *[id*='question'] .panel-heading {
-      padding: 1rem 0.75rem; } }
-  .group-heading h1, *[id*='question'] .panel-heading h1, .group-heading #wrapper h1, #wrapper .group-heading h1, *[id*='question'] .panel-heading #wrapper h1, #wrapper *[id*='question'] .panel-heading h1 {
-    font-size: 2.0825rem; }
+    .group-heading h1, .group-heading #wrapper h1, #wrapper .group-heading h1, .group-heading .group-description {
+      padding: 1rem 1rem; } }
+.group-heading h1, .group-heading #wrapper h1, #wrapper .group-heading h1 {
+  margin: 0;
+  font-size: 2.0825rem; }
+.group-heading .group-description {
+  padding-top: 0; }
+.group-heading h1 + .group-description, .group-heading .jumbotron h1 + .group-description, .group-heading #wrapper h1 + .group-description, #wrapper .group-heading h1 + .group-description {
+  padding-bottom: 2.25rem; }
 
 .panel-heading {
   background-color: #eeeeee;
@@ -3341,17 +3390,17 @@ button.primary, .primary.ui-button, .ui-dialog button.upload-button, .ui-dialog 
     text-shadow: 0 1px 0 white;
     margin-bottom: 0; }
 
-.panel-body {
-  padding: 0; }
+*[id*='question'] .panel-heading {
+  padding: 1rem 1.5rem; }
+  @media (max-width: 768px) {
+    *[id*='question'] .panel-heading {
+      padding: 1rem 1rem; } }
 
 *[id*='question'] .panel-body {
   padding: 1.5rem; }
   @media (max-width: 768px) {
     *[id*='question'] .panel-body {
       padding: 1.5rem 1rem; } }
-  @media (max-width: 480px) {
-    *[id*='question'] .panel-body {
-      padding: 1.5rem 0.75rem; } }
 
 .panel.question.input-error {
   border-color: #b20d28;
@@ -4206,6 +4255,60 @@ li[class*="withslider"] {
     right: 1.5rem;
     text-align: right; }
 
+.slider-wrapper {
+  width: 100%;
+  float: none;
+  margin: 0; }
+
+.slider-labels {
+  padding: 0;
+  height: 1.5rem; }
+
+.slider-label {
+  width: 20%;
+  text-align: center; }
+
+.slider-background {
+  padding: 0;
+  height: auto;
+  background: none; }
+
+.slider-background .slider-rating,
+.page-odd .slider-background .slider-rating {
+  visibility: visible;
+  width: auto;
+  height: auto;
+  margin: 3rem 10%; }
+
+.slider-rating a.ui-slider-handle,
+.page-odd .slider-rating a.ui-slider-handle {
+  width: 3rem;
+  height: 4.5rem;
+  top: -0.75rem;
+  margin-left: -1.5rem;
+  border-color: rgba(102, 102, 102, 0.35);
+  background-color: white;
+  background-image: -moz-linear-gradient(#eeeeee, white);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(white));
+  background-image: -webkit-linear-gradient(#eeeeee, white);
+  background-image: -o-linear-gradient(#eeeeee, white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); }
+  .slider-rating a.ui-slider-handle:hover,
+  .page-odd .slider-rating a.ui-slider-handle:hover {
+    cursor: pointer; }
+  .slider-rating a.ui-slider-handle:before, .slider-rating a.ui-slider-handle:after,
+  .page-odd .slider-rating a.ui-slider-handle:before,
+  .page-odd .slider-rating a.ui-slider-handle:after {
+    border-top: 1px solid rgba(102, 102, 102, 0.35); }
+
+.slider-emoticon-wrapper {
+  padding: 0;
+  text-align: center; }
+
+.slider-emoticon {
+  float: none;
+  display: inline-block; }
+
 .ui-slider.ui-widget-content {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25); }
 
@@ -4274,6 +4377,40 @@ li .slider-callout {
     text-decoration: none; }
     .slider-reset:hover:before, .slider-reset:active:before {
       color: #b20d28; }
+
+.stars-list {
+  width: 60%;
+  margin: 0 auto; }
+
+.star-rating {
+  background: none;
+  text-align: center;
+  width: 16.667%;
+  height: 3rem;
+  line-height: 3rem; }
+  .star-rating:before {
+    color: #4d4d4d;
+    content: ""; }
+  .star-rating:hover, .star-rating:active {
+    text-decoration: none; }
+  .star-rating.star:before {
+    content: "";
+    opacity: 0.5;
+    filter: alpha(opacity=50); }
+  .star-rating.star:hover:before, .star-rating.star:active:before {
+    color: #586e4d;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .star-rating.star-rated:before {
+    content: "";
+    color: #638f4d;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .star-rating.star-cancel:before {
+    content: "";
+    color: #4d4d4d; }
+  .star-rating.star-cancel:hover:before, .star-rating.star-cancel:active:before {
+    color: #b20d28; }
 
 #tokenform {
   margin-top: 20px; }
