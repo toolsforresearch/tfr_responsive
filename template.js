@@ -1,5 +1,5 @@
 /**
- * Release: v1.6.0 build on 2015-11-24 13:28:1
+ * Release: v1.7.3+2016-12-15 11:38:26 build on 2016-12-15 11:38:26
  *
  * @fileOverview
  *   This file is meant for adding your own jQuery and javascript customisations.

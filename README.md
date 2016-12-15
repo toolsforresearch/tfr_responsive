@@ -1,10 +1,25 @@
 ***************************************************
 
-You are looking at the free version of our Bootstrap based LimeSurvey template. 
+You are looking at the free version of our Bootstrap based LimeSurvey template. This is version 1.7.3
 
 ***************************************************
 
-Release: v1.6.0 build on 2015-11-24 13:28:1
+Please be aware that this template will work only on LimeSurvey 2.6.2 (previously known as 2.06) installations and not on LimeSurvey 2.5x! Don't try, we already did. It really does not work.
+
+Our next major release will have release number that corresponds with the relase number that LimeSurvey will use. We will release as soon as we can have a new template ready that fits the work in development now for version 3.0 of LimeSurvey. Currently we expect this to be ready in spring 2017.
+
+Release: v1.7.3+2016-12-15 10:50:14 build on 2016-12-15 10:50:14
+#Release 1.7.3
+* minor improvements
+
+#Release 1.7.0
+* better styling of question type "Array by column"
+* error with double equations: fixed
+* better styling of dual-scale question
+* labels visible while only the radion button should be visible: fixed
+* progress bar showing fractions on Chrome on Mac: fixed by deleting the percentage altogether
+* No text in labels multi-array-flex-text on small devices: fixed
+
 #Release 1.6: Fixed errors/added features since release 1.5
 * better styling of file upload dialog and time picker(jQuery)
 * group description now also shows when only group description (and not group title) should show up

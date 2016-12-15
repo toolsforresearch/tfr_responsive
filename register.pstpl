@@ -1,28 +1,28 @@
-{CHECKJAVASCRIPT}
+<div class="content-wrapper">
+    <div class="jumbotron register-dialog">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>{SURVEYNAME}</h1>
+            </div>
+            <div class="col-md-3">
 
-<div class="jumbotron register-dialog">
-    <div class="row">
-        <div class="col-md-9">
-            <h1>{SURVEYNAME}</h1>
+    			<img class="logo center-block" src="/upload/templates/tfr_responsive/images/logo.png" alt="Tools for Research" />
+
+            </div>
         </div>
-        <div class="col-md-3">
-
-			<img class="logo center-block" src="/upload/templates/tfr_responsive/images/logo.png" alt="Tools for Research" />
-
+        
+        <div class="row">
+            <div class="col-md-12 languageswitcher">
+                {LANGUAGECHANGER}
+            </div>
         </div>
-    </div>
     
-    <div class="row">
-        <div class="col-md-12 languageswitcher">
-            {LANGUAGECHANGER}
-        </div>
+        <div class="row register-text">
+    	   <p class="text-danger">{REGISTERERROR}</p>
+    	   <p>{REGISTERMESSAGE1}</p>
+    	   <p>{REGISTERMESSAGE2}</p>
+    	</div>
+    	
+    	<div class="row register-form">{REGISTERFORM}</div>
     </div>
-
-    <div class="row register-text">
-	   <p class="text-danger">{REGISTERERROR}</p>
-	   <p>{REGISTERMESSAGE1}</p>
-	   <p>{REGISTERMESSAGE2}</p>
-	</div>
-	
-	<div class="row register-form">{REGISTERFORM}</div>
 </div>

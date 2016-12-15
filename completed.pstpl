@@ -1,4 +1,6 @@
-<div class="jumbotron completed-table">
-	<p>{COMPLETED}</p>
-	<p>{URL}</p>
+<div class="content-wrapper">
+    <div class="jumbotron completed-table">
+    	<p>{COMPLETED}</p>
+    	<p>{URL}</p>
+    </div>
 </div>

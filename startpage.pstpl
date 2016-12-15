@@ -1,13 +1,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <!--
 
-	Release: v1.6.0 build on 2015-11-24 13:28:1
+	Release: v1.7.3+2016-12-15 10:50:14 build on 2016-12-15 10:50:14
 
 	ToolsForResearch Responsive for LimeSurvey
 	A Responsive LimeSurvey Template Based On Bootstrap 3
 	(c) 2015 Tools for Research (http://www.toolsforresearch.com/limesurvey-responsive-template)
    
-    Inspired by: https://github.com/mofog/BootstrapForLimeSurvey
+   Get latest premium version at http://www.limesurvey-templates.com/limesurvey-template-responsive-p-59.html
+
 
 -->
 
@@ -35,9 +36,7 @@
 
 <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT}">
 
-    <div class="main-wrapper">
-        <div class="main" role="main">
-            {CHECKJAVASCRIPT}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 content">
+    <div class="main-wrapper" role="main">
+        {CHECKJAVASCRIPT}
+        <div class="row">
+            <div class="col-md-12 content">

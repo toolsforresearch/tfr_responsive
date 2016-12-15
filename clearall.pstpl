@@ -1,7 +1,9 @@
-<div class="jumbotron clearall-results">
-	<h1>{ANSWERSCLEARED}</h1>
-	<div class="navigation">
-	   <button type="button" class="button clearall-results-restart" >{RESTART}</button>
-	   <button type="button" class="button clearall-results-close">{CLOSEWINDOW}</button>
-	</div>
+<div class="content-wrapper">
+    <div class="jumbotron clearall-results">
+    	<h1>{ANSWERSCLEARED}</h1>
+    	<div class="navigation">
+    	   <button type="button" class="button clearall-results-restart" >{RESTART}</button>
+    	   <button type="button" class="button clearall-results-close" onclick="top.window.close();" >Close this window</button>
+    	</div>
+    </div>
 </div>

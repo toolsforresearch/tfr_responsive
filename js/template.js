@@ -10,6 +10,10 @@ $(document).ready(function($){
   $('body').addClass('tfr_responsive');
 
 
+  //* !Survey wrapper */
+  $('form').wrapInner('<div class="survey-wrapper">');
+
+
   //* !Language Switcher */
   if (jQuery('select.languagechanger option').size() < 2) {
     $('div.languageswitcher').hide();
@@ -25,6 +29,7 @@ $(document).ready(function($){
   
   // Show our progressbar instead of the default one
   if ($('#progress-wrapper').length > 0) {
+    $('body').addClass('with-progress');
     $('.tfr-progress').append('<div id="tfr-progressbar"><div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>');
     $('#progress-wrapper').addClass('hidden');
   } else {
@@ -37,10 +42,15 @@ $(document).ready(function($){
     var ls_progressBarWidth=$(event.currentTarget).find('.ui-progressbar-value').css('width'),
       tfr_progressBar=$('#tfr-progressbar .progress-bar');
 
-    tfr_progressBar.html(ls_progressBarWidth);
+    //tfr_progressBar.html(ls_progressBarWidth);
     tfr_progressBar.css({width: ls_progressBarWidth});
 
   });
+
+
+  //* !The index */ PE
+  $('#index').attr('role', 'navigation').addClass('index').children().removeClass('container').addClass('index-body');
+  
 
 
   //* !Better borderstyling first radio- & checkboxlist  */
@@ -59,6 +69,20 @@ $(document).ready(function($){
   });
 
 
+  //* !User Response on table within array-flexible-column  */
+  // we put the class "radio-list" on the tablerow so the default user response is restored
+  $('.array-flexible-column tbody tr').each(function(){
+    $(this).addClass('radio-list');
+  });
+
+
+  //* !Remove textual labels within arrays */
+  // issue #480 / forms issue when used on small devices and the responsive table technique: we use css font-size: 0px instead
+  //$('div[id*="question"][class*="array"] label').each(function(){
+  //  $(this).html('');
+  //});
+
+
   //* !Dual Scale array  */
   // Make sure each input is before it's label for .array-flexible-duel-scale
   $('td > input', $('.array-flexible-duel-scale')).each(function(index, elem){
@@ -66,7 +90,8 @@ $(document).ready(function($){
     var $parent = $elem.parent();
     var $label = $('label', $parent);
     if ($label) {
-      $elem.before($label);
+      //$elem.before($label);
+      $elem.insertBefore($label);
     }
   });
 
@@ -101,9 +126,9 @@ $(document).ready(function($){
   });
 
   // On User Action FOR DUAL ARRAY
-  $('td[class^="answer_cell_1"] > label + input').on('click', function(event){ setDualArraySelected(event); });
-  $('td[class^="answer_cell_2"] > label + input').on('click', function(event){ setDualArraySelected(event); });
-  $('td[class^="dual_scale_no_answer"] > label + input').on('click', function(event){ setDualArraySelected(event); });
+  $('td[class^="answer_cell_1"] > input').on('click', function(event){ setDualArraySelected(event); });
+  $('td[class^="answer_cell_2"] > input').on('click', function(event){ setDualArraySelected(event); });
+  $('td[class^="dual_scale_no_answer"] > input').on('click', function(event){ setDualArraySelected(event); });
 
   function setDualArraySelected(event){
 
@@ -135,6 +160,13 @@ $(document).ready(function($){
   // Remove help-image for the DOM because we don't use it
   $('.survey-question-help').each(function(){
     $(this).find('img').detach();
+  });
+    
+  // Check for empty .group-heading
+  $('.group-heading').each(function(){
+    if ($(this).children('h1').html() == '' && $(this).children('.group-description').html() == '') {
+      $(this).detach();
+    }
   });
   
   // Check for empty elements in .group-heading
@@ -181,14 +213,10 @@ $(document).ready(function($){
     // first we check for instances of .survey-question-help and flag this question
     $(this).has('.survey-question-help').addClass('includes-surveyquestionhelp');
     // finally target all questions within this questiontype without flag and remove them
-    $(this).not('.includes-surveyquestionhelp').find('.panel-body').detach();
+    $(this).not('.includes-surveyquestionhelp').find('.panel-body').addClass('hidden');
   });
 
 
-
-
-  //* !The index */ PE
-  $('#index').addClass('index').children().removeClass('container').addClass('index-body');
 
 
   //* !The slider */ PE 09.06.15
